@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="UndercoverGame.Popups.PopUpRules"
+               Color="Transparent">
+
+    <Border BackgroundColor="{AppThemeBinding Light= {StaticResource PalePink}, Dark={StaticResource Purple4}}" 
+            StrokeThickness="0" 
+            StrokeShape="RoundRectangle 40,40,40,40"
+            WidthRequest="1000"
+            HeightRequest="700">
+        <Grid Margin="15" RowDefinitions="7*,*">
+            <ScrollView Grid.Row="0" Orientation="Vertical">
+                <VerticalStackLayout>
+                    <Grid>
+                        <Label Text="Polar Investigation" 
+                               Style="{StaticResource HeaderBig}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalOptions="Center"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Polar Investigation est un jeu qui joue sur les mots ☺. Un petit groupe d’Imposteurs s’est infiltré sur une île tropicale, où tout le monde (y compris les Imposteurs) a oublié son identité. Les seuls indices disponibles pour se rappeler qui on est sont des mots secrets reçus par chacun. Votre but est de découvrir ceux qui ont le même mot que vous et de vous entraider pour expulser les autres de l’île !" 
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    <Label></Label>
+                    
+                    <Grid>
+                        <Label Text="Il y a trois types de rôle" 
+                               Style="{StaticResource HeaderBig}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Les Civils : Leur but est de découvrir leur propre identité et d'éliminer l’Undercover et Mr. White." 
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    
+                    <Grid>
+                        <Label Text="L’Undercover : Son but est de découvrir sa propre identité et de survivre jusqu’à la fin."
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    
+                    <Grid>
+                        <Label Text="Le Mr. White : Son but est de survivre jusqu’à la fin ou de deviner le mot secret des Civils."
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Déroulement du jeu" 
+                               Style="{StaticResource HeaderBig}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    
+                    <Grid>
+                        <Label Text="Chaque partie est basée sur une paire de mots assez proches (par exemple « chat » et « chien »). Au début de la partie, chacun reçoit l’un de ces mots excepté le Mr. White."
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="GARDEZ PRÉCIEUSEMENT VOTRE MOT SECRET !!!"
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Phase du jeu" 
+                               Style="{StaticResource HeaderBig}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Il y a 3 phases principales dans le jeu. Après un cycle des 3 phases, un joueur est éliminé de l’île. Répétez ce cycle autant de fois que nécessaire jusqu’à ce que l’un des groupes (Civils, Undercovers ou Mr. Whites) gagne."
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Phase de Description" 
+                               Style="{StaticResource HeaderBig}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Dès que chacun a reçu son mot secret, un joueur est désigné aléatoirement pour commencer à décrire son mot secret. Un par un, chacun décrit son mot avec un mot ou une courte phrase. Mr. White doit improviser, puisqu’il/elle n’a pas de mot secret."
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Grid>
+                        <Label Text="Utilisez cette phase pour révéler assez d’informations pour trouver vos alliés, mais pas trop pour éviter que Mr. White ne devine le mot."
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Phase de Discussion" 
+                               Style="{StaticResource HeaderBig}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+                    
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Une fois la phase de description terminée, les joueurs discutent et débattent sur qui, selon eux, sont les Civils ou les Imposteurs."
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Les Civils et les Undercovers doivent utiliser cette phase pour rassembler des indices sur leur identité, construire des alliances et identifier leurs ennemis. Pendant ce temps, pour Mr. White c’est le moment idéal pour essayer d’en apprendre plus sur le mot des Civils."
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Un conseil : ne vous exposez pas trop tôt ! Utilisez votre charme pour faire pencher la balance en votre faveur."
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Phase d’Élimination" 
+                               Style="{StaticResource HeaderBig}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+                    
+                    <Label></Label>
+                    
+                    <Grid>
+                        <Label Text="Une fois la discussion terminée, les joueurs restants votent pour éliminer un joueur de leur choix. Rappelez-vous, les joueurs éliminés ne peuvent plus voter." 
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Le joueur qui a reçu le plus de votes est expulsé de l’île ! À moins que le joueur en question ne soit Mr. White !… Dans ce cas, il/elle a encore une chance de deviner le mot des Civils. S’il/elle devine le mot des Civils correctement, Mr. White gagne immédiatement." 
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Si après l’élimination, les conditions de victoire indiquées ci-dessous ne sont pas remplies, répétez les 3 phases jusqu’à ce que l’un des groupes (Civils, Undercovers ou Mr. Whites) gagne." 
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    <Label></Label>
+                    
+                    <Grid>
+                        <Label Text="Phase d’Élimination" 
+                               Style="{StaticResource HeaderBig}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Les Civils gagnent s’ils éliminent tous les Undercovers et les Mr. Whites." 
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="Les Imposteurs (Undercovers et/ou Mr. Whites) gagnent s’ils survivent jusqu’à ce qu’il ne reste plus qu’1 Civil." 
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+                    
+                    <Grid>
+                        <Label Text="Mr. White gagne aussi s’il/elle devine le mot secret des Civils." 
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Label></Label>
+
+                    <Grid>
+                        <Label Text="En cas de victoire, les Civils marquent tous 2 points, Mr. White, 6 points et l’Undercover, 10 points !" 
+                               Style="{StaticResource HeaderSmall}"
+                               LineBreakMode="CharacterWrap"
+                               HorizontalTextAlignment="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </ScrollView>
+            <Button Style="{StaticResource GradientButtonFooter}" 
+                    Text="Retourner au match"
+                    MaximumWidthRequest="300"
+                    Grid.Row="1"
+                    Clicked="Button_Clicked"/>
+        </Grid>
+    </Border>
+    
+</toolkit:Popup>

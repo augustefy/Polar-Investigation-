@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UndercoverGame.PageSettings"
+             xmlns:local1="clr-namespace:UndercoverGame"
+             xmlns:local2="clr-namespace:UndercoverGame.LesViews.ViewFrames"
+             xmlns:local3="clr-namespace:UndercoverGame.LesViews.ViewHeaders"
+             xmlns:local4="clr-namespace:UndercoverGame.LesViews.ViewButtons"
+             Title="PageSettings"
+             Shell.NavBarIsVisible="False"
+             Style="{StaticResource FondPage}"
+             >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <local3:HeaderSettings Grid.Row="0" Grid.ColumnSpan="2"/>
+
+        <local2:FrameLanguage Grid.Row="1" Grid.Column="0"/>
+        <local2:FrameAppearance Grid.Row="1" Grid.Column="1"/>
+        <local2:FrameMusic Grid.Row="2" Grid.Column="0"/>
+        <local4:QuitButton Grid.Row="3" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</ContentPage>

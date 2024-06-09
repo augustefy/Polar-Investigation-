@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="UndercoverGame.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:UndercoverGame"
+    Title="UndercoverGame"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.NavBarIsVisible="False"
+    >
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent 
+        Title="pageSelection"
+        ContentTemplate="{DataTemplate local:pageSelection}"
+        Route="Page Selection Role"/>
+    <ShellContent 
+    Title="pagePickCard"
+    ContentTemplate="{DataTemplate local:PickCard}"
+    Route="pick card"/>
+    
+    <ShellContent 
+    Title="PageAccueil"
+    ContentTemplate="{DataTemplate local:LesPages.PageAccueil}"
+    Route="Page Accueil"/>
+
+    <ShellContent 
+    Title="PageSettings"
+    ContentTemplate="{DataTemplate local:PageSettings}"
+    Route="Page Settings"/>
+
+    <ShellContent 
+    Title="ChoiNbJoueur"
+    ContentTemplate="{DataTemplate local:LesPages.ChoiNbJoueur}"
+    Route="Choi Nb Joueur"/>
+
+    <ShellContent 
+    Title="ChoiNom"
+    ContentTemplate="{DataTemplate local:LesPages.ChoiNom}"
+    Route="Choi Nom"/>
+
+    <ShellContent 
+    Title="CardPick"
+    ContentTemplate="{DataTemplate local:LesPages.CardPick}"
+    Route="Card Pick"/>
+
+    <ShellContent 
+    Title="Speaking"
+    ContentTemplate="{DataTemplate local:LesPages.Speaking}"
+    Route="Speaking"/>
+
+    <ShellContent 
+    Title="Voter"
+    ContentTemplate="{DataTemplate local:LesPages.Voter}"
+    Route="Voter"/>
+
+</Shell>

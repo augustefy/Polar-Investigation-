@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:UndercoverClass.Game;assembly=UndercoverClass"
+             x:Class="UndercoverGame.Ztest">
+
+    <ScrollView Grid.Row="0"
+            Orientation="Horizontal">
+        <HorizontalStackLayout BindableLayout.ItemsSource="{Binding VotesImg}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="model:Joueur">
+                    <Frame WidthRequest="60" HeightRequest="60"
+                           Padding="0" CornerRadius="30" Margin="0, 0, -10, 0"
+                           IsClippedToBounds="True"
+                           BorderColor="DarkSalmon" HasShadow="True" >
+                        <Frame.Shadow>
+                            <Shadow Brush="DarkSalmon" Offset="3, 2"
+                                    Radius="2" Opacity="0.8"/>
+                        </Frame.Shadow>
+                        <Image Source="{Binding Image}"/>
+                    </Frame>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </HorizontalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

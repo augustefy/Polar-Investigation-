@@ -1,0 +1,65 @@
+kind: pipeline
+type: docker
+name: CI
+
+trigger:
+  event:
+    - push
+
+steps:
+  - name: buildClass
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    commands:
+      - cd UndercoverClass
+      - dotnet restore
+      - dotnet build -c Release --no-restore
+      - dotnet publish -c Release --no-restore -o $CI_PROJECT_DIR/build/release
+
+  - name: buildConsole
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    commands:
+      - cd ConsoleM
+      - dotnet restore
+      - dotnet build -c Release --no-restore
+      - dotnet publish -c Release --no-restore -o $CI_PROJECT_DIR/build/release
+    depends_on: [buildClass]
+
+  - name: test
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    commands:
+      - dotnet restore TestUndercover
+      - dotnet test TestUndercover --no-restore
+    depends_on: [buildConsole]
+
+  - name: code-inspection
+    image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dronesonarplugin-dotnet8
+    secrets: [ My_SUPER_SECRET ]
+    settings:
+      sonar_host: https://codefirst.iut.uca.fr/sonar/
+      sonar_token:
+        from_secret: My_SUPER_SECRET
+    commands:
+      - dotnet restore ConsoleM
+      - dotnet restore UndercoverClass
+      - dotnet restore TestUndercover
+      - dotnet sonarscanner begin /k:Undercover /d:sonar.host.url=https://codefirst.iut.uca.fr/sonar/ /d:sonar.coverageReportPaths="coveragereport/SonarQube.xml" /d:sonar.coverage.exclusions="TestUndercover, UndercoverGame" /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
+      - dotnet build ConsoleM
+      - dotnet build UndercoverClass
+      - dotnet test TestUndercover --logger trx --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --collect "XPlat Code Coverage"
+      - reportgenerator -reports:"**/coverage.cobertura.xml" -reporttypes:SonarQube -targetdir:"coveragereport"
+      - dotnet publish TestUndercover -c Release --no-restore -o $CI_PROJECT_DIR/build/release
+      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
+    depends_on: [test]
+
+  - name: generate-and-deploy-docs
+    image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-docdeployer
+    failure: ignore
+    volumes:
+      - name: docs
+        path: /documentation/doxygen
+    commands:
+      - /entrypoint.sh
+    when:
+      event:
+        - push
+    depends_on: [buildConsole, test]

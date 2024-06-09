@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local1="clr-namespace:UndercoverGame"
+             xmlns:local2="clr-namespace:UndercoverGame.LesViews.ViewHeaders"
+             x:Class="UndercoverGame.LesPages.Speaking"
+             NavigationPage.HasNavigationBar="False"
+             Style="{StaticResource FondPage}"
+             x:Name="root">
+
+    <Grid RowDefinitions="*,4*,*">
+        
+        <local2:HeaderSpeaking Grid.Row="0" Margin="0" NJoueur="{Binding Qui}" Titre="{Binding Titret}"/>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*,4*,4*,4*,*">
+            
+            <Grid Grid.Column="1" RowDefinitions="*,8*,*">
+                <Border Grid.Row="1"
+                        Stroke="Transparent">
+                    <Grid RowDefinitions="5*,*">
+                        <ImageButton Source="{Binding Img1}"
+                                     Background="Transparent"
+                                     VerticalOptions="FillAndExpand"
+                                     Grid.Row="0"
+                                     Clicked="ImageButton_Clicked"/>
+                        <Label Text="{Binding Txt1}"
+                               Style="{StaticResource HeaderSmall}"
+                               Grid.Row="1"/>
+                    </Grid>
+                </Border>
+            </Grid>
+            
+            <Grid Grid.Column="2" RowDefinitions="*,8*,*">
+                <Border Grid.Row="1"
+                        Stroke="Transparent">
+                    <Grid RowDefinitions="5*,*">
+                        <ImageButton Source="{Binding Img2}"
+                                     Background="Transparent"
+                                     VerticalOptions="FillAndExpand"
+                                     Grid.Row="0"
+                                     Clicked="ImageButton_Clicked"/>
+                        <Label Text="Cliquer Sur Image Pour Continuer!"
+                               Style="{StaticResource HeaderSmall}"
+                               Grid.Row="1"/>
+                    </Grid>
+                </Border>
+            </Grid>
+            
+            <Grid Grid.Column="3" RowDefinitions="*,8*,*">
+                <Border Grid.Row="1"
+                        Stroke="Transparent">
+                    <Grid RowDefinitions="5*,*">
+                        <ImageButton Source="{Binding Img3}"
+                                     Background="Transparent"
+                                     VerticalOptions="FillAndExpand"
+                                     Grid.Row="0"
+                                     Clicked="ImageButton_Clicked"/>
+                        <Label Text="{Binding Txt3}"
+                               Style="{StaticResource HeaderSmall}"
+                               Grid.Row="1"/>
+                    </Grid>
+                </Border>
+            </Grid>
+            
+        </Grid>
+        
+        <local1:ButtonsFooter Grid.Row="2" 
+                      OnRestartButtonClicked="AllerPageNbChoi"
+                      OnQuitButtonClicked="RevnirPageDaccueil"/>
+    </Grid>
+</ContentPage>

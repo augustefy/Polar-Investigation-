@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local1="clr-namespace:UndercoverGame.LesViews.ViewHeaders"
+             xmlns:local2="clr-namespace:UndercoverGame.LesViews.ViewFooters"
+             xmlns:local3="clr-namespace:UndercoverGame.LesViews.ViewButtons"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="UndercoverGame.LesPages.ChoiNbJoueur"
+             Title="ChoiNbJoueur"
+             Style="{StaticResource FondPage}">
+
+    <Grid RowDefinitions="*, *,3*,*">
+        <local1:HeaderChoiNbPerso Grid.Row="0" />
+
+        <Grid Grid.Row="1" ColumnDefinitions="*, *" RowDefinitions="*,*">
+            
+            <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Joueurs"
+                    Margin="2"
+                    MaximumWidthRequest="180"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    FontSize="Large"
+                    TextColor="{AppThemeBinding Light={StaticResource PaperWhite}, Dark={StaticResource Purple3}}"
+                    BackgroundColor="Transparent"
+                    />
+            <Grid Grid.Row="1" ColumnDefinitions="*, *, *, *, *, *, *"  ColumnSpacing="2">
+                <local3:ButtonMoins Grid.Column="2"
+                                    OnButtonClicked="MoinsJoueurs"/>
+                <Border StrokeShape="RoundRectangle 40,40,40,40" 
+                       Grid.Column="3" 
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource PalePink}, Dark={StaticResource Purple4}}"
+                       MaximumWidthRequest="190"
+                       MaximumHeightRequest="90"
+                       
+                       >
+                    <Label
+                        Text="{Binding Parametres.NbJoueurs}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontSize="40"
+                        TextColor="{AppThemeBinding Light={StaticResource PaperWhite}, Dark={StaticResource Purple3}}"
+                        />
+                </Border>
+                <local3:ButtonPlus x:Name="BPlusJoueurs" 
+                                    Grid.Column="4"
+                                    OnButtonClicked="PlusJoueurs"      
+                                    />
+                
+            </Grid>
+            <Label
+                FontSize="Large"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="Rounds"
+                    Margin="2"
+                    MaximumWidthRequest="180"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    
+                    TextColor="{AppThemeBinding Light={StaticResource PaperWhite}, Dark={StaticResource Purple3}}"
+                    BackgroundColor="Transparent"
+                    />
+            <Grid Grid.Row="1" Grid.Column="1" ColumnDefinitions="*, *, *,*,*,*">
+                
+                <local3:ButtonMoins Grid.Column="1"
+                            OnButtonClicked="MoinsRound"/>
+                <Border StrokeShape="RoundRectangle 40,40,40,40" 
+                       Grid.Column="2" 
+                       BackgroundColor="{AppThemeBinding Light= {StaticResource PalePink}, Dark={StaticResource Purple4}}"
+                       MaximumWidthRequest="190"
+                       MaximumHeightRequest="90"
+                       >
+                    
+                    <Label
+                Text="{Binding Parametres.NbRounds}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="40"
+                TextColor="{AppThemeBinding Light={StaticResource PaperWhite}, Dark={StaticResource Purple3}}"
+                />
+                </Border>
+                <local3:ButtonPlus 
+                            Grid.Column="3"
+                            OnButtonClicked="PlusRound"      
+                            />
+
+            </Grid>
+            
+        </Grid>
+        
+       
+           
+        
+
+        <Grid Grid.Row="2" RowDefinitions="5*, *, *" ColumnDefinitions="*, *, *">
+
+
+            <ImageButton Source="undercover_logo.png"
+                         Grid.Row="0"
+                         Grid.Column="0"
+                         CornerRadius="10"
+                         Aspect="Fill"
+                         MaximumHeightRequest="300"
+                         MaximumWidthRequest="200" 
+                     />
+
+            <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Civil"
+                    Margin="2"
+                    MaximumWidthRequest="180"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    FontSize="20"
+                    TextColor="{AppThemeBinding Light={StaticResource PaperWhite}, Dark={StaticResource Purple3}}"
+                    BackgroundColor="Transparent"
+                    />      
+
+            <Grid Grid.Row="2" Grid.Column="0" ColumnDefinitions="*, 2*, *">
+                <Grid Grid.Column="1" ColumnDefinitions="*, 2*, *" >
+                   
+                    <Border StrokeShape="RoundRectangle 40,40,40,40"
+               Grid.Column="1" 
+               BackgroundColor="{AppThemeBinding Light= {StaticResource PalePink}, Dark={StaticResource Purple4}}"
+               MaximumWidthRequest="190"
+               MaximumHeightRequest="90"
+               >
+                        <Label
+                                Text="{Binding Parametres.NbCivil}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                FontSize="20"
+                                TextColor="{AppThemeBinding Light={StaticResource PaperWhite}, Dark={StaticResource Purple3}}"
+                                />  
+                    </Border>
+                    
+                </Grid>
+            </Grid>
+
+
+            <ImageButton Source="undercover_logo_black.png"
+                 Grid.Row="0"
+                 Grid.Column="1"
+                 CornerRadius="10"
+                 Aspect="Fill"
+                 MaximumHeightRequest="300"
+                 MaximumWidthRequest="200" 
+             />
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="Undercovers"
+                Margin="2"
+                MaximumWidthRequest="180"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="20"
+                TextColor="{AppThemeBinding Light={StaticResource PaperWhite}, Dark={StaticResource Purple3}}"
+                BackgroundColor="Transparent"
+                />
+
+            <Grid Grid.Row="2" Grid.Column="1" ColumnDefinitions="*, 2*, *">
+                <Grid Grid.Column="1" ColumnDefinitions="*, 2*, *" >
+                    <local3:ButtonMoins Grid.Column="0" OnButtonClicked="MoinsUnder" />
+                    <Border StrokeShape="RoundRectangle 40,40,40,40"
+                           Grid.Column="1" 
+                           BackgroundColor="{AppThemeBinding Light= {StaticResource PalePink}, Dark={StaticResource Purple4}}"
+                           MaximumWidthRequest="190"
+                           MaximumHeightRequest="90"
+                           >
+                        <Label
+                        Text="{Binding Parametres.NbUnder}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontSize="20"
+                        TextColor="{AppThemeBinding Light={StaticResource PaperWhite}, Dark={StaticResource Purple3}}"
+                        />
+                    </Border>
+                    <local3:ButtonPlus Grid.Column="2" OnButtonClicked="PlusUnder"/>
+                </Grid>
+            </Grid>
+
+            <ImageButton Source="undercover_logo_white.png"
+                 Grid.Row="0"
+                 Grid.Column="2"
+                 CornerRadius="10"
+                 Aspect="Fill"
+                 MaximumHeightRequest="300"
+                 MaximumWidthRequest="200" 
+             />
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="2"
+                Text="Mr. white"
+                Margin="2"
+                MaximumWidthRequest="180"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="20"
+                TextColor="{AppThemeBinding Light={StaticResource PaperWhite}, Dark={StaticResource Purple3}}"
+                BackgroundColor="Transparent"
+                />
+
+            <Grid Grid.Row="2" Grid.Column="2" ColumnDefinitions="*, 2*, *">
+                <Grid Grid.Column="1" ColumnDefinitions="*, 2*, *" >
+                    <local3:ButtonMoins Grid.Column="0" OnButtonClicked="MoinsWhite" />
+                    <Border StrokeShape="RoundRectangle 40,40,40,40"
+                           Grid.Column="1" 
+                           BackgroundColor="{AppThemeBinding Light= {StaticResource PalePink}, Dark={StaticResource Purple4}}"
+                           MaximumWidthRequest="190"
+                           MaximumHeightRequest="90"
+                           >
+                        <Label
+                        Text="{Binding Parametres.NbWhite}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontSize="20"
+                        TextColor="{AppThemeBinding Light={StaticResource PaperWhite}, Dark={StaticResource Purple3}}"
+                        />
+                    </Border>
+                    <local3:ButtonPlus Grid.Column="2" OnButtonClicked="PlusWhite" />
+                </Grid>
+            </Grid>
+
+        </Grid>
+        <local2:FooterAccueil Grid.Row="3" 
+                              OnStartButtonClicked="AllerProchainePage" 
+                              OnQuitButtonClicked="RevnirPageDaccueil"/>
+    </Grid>
+</ContentPage>

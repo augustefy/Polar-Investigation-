@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="UndercoverGame.Popups.PopUpWhiteWin"
+               Color="Transparent">
+    
+    <Border BackgroundColor="{AppThemeBinding Light= {StaticResource PalePink}, Dark={StaticResource Purple4}}" 
+            StrokeThickness="0" 
+            StrokeShape="RoundRectangle 40,40,40,40"
+            WidthRequest="400"
+            HeightRequest="300">
+        <Grid RowDefinitions="*,*,*" Margin="15">
+            <Label Text="Mr. White a deviner mot!"
+                   Grid.Row="0"
+                   HorizontalOptions="Center"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light={StaticResource Purple8}, Dark={StaticResource PaperWhite}}"/>
+
+            <Grid Grid.Row="1">
+                <Label Text="{Binding Joueur.Name}" Style="{StaticResource HeaderSmall}"/>
+            </Grid>
+
+            <Button Style="{StaticResource GradientButtonFooter}" 
+                    Text="D'accord" 
+                    Grid.Row="2"
+                    Clicked="Button_Clicked"/>
+        </Grid>
+    </Border>
+    
+</toolkit:Popup>

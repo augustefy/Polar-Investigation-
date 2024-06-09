@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:UndercoverClass.Game;assembly=UndercoverClass"
+             xmlns:local="clr-namespace:UndercoverGame.LesViews.ViewButtons"
+             xmlns:local1="clr-namespace:UndercoverGame"
+             xmlns:local2="clr-namespace:UndercoverGame.LesViews.ViewHeaders"
+             x:Class="UndercoverGame.LesPages.Voter"
+             NavigationPage.HasNavigationBar="False"
+             Style="{StaticResource FondPage}"
+             x:Name="root">
+
+    <Grid RowDefinitions="*,4*,*">
+
+        <local2:HeaderSpeaking Grid.Row="0" Margin="0" NJoueur="{Binding Qui}" Titre="{Binding Titret}"/>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*,4*,*">
+            <Grid Grid.Column="1">
+                <CollectionView ItemsSource="{Binding round2.Plateau.Board}" ItemsLayout="VerticalGrid, 3">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HeightRequest="400" MaximumWidthRequest="325">
+                                <Border Stroke="{StaticResource LightPink}" StrokeThickness="5"
+                                             Margin="0, 4" Padding="8,4"
+                                             Background="{AppThemeBinding Light={StaticResource PalePink}, Dark={StaticResource Purple3}}">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="30, 30, 30, 30"/>
+                                    </Border.StrokeShape>
+                                    <Grid RowDefinitions="*,5*,*">
+
+                                        <ScrollView Grid.Row="0"
+                                                    Orientation="Horizontal">
+                                            <HorizontalStackLayout BindableLayout.ItemsSource="{Binding VotesImg}">
+                                                <BindableLayout.ItemTemplate>
+                                                    <DataTemplate x:DataType="model:Joueur">
+                                                        <Frame WidthRequest="60" HeightRequest="60"
+                                                               Padding="0" CornerRadius="30" Margin="0, 0, -10, 0"
+                                                               IsClippedToBounds="True"
+                                                               BorderColor="DarkSalmon" HasShadow="True" >
+                                                            <Frame.Shadow>
+                                                                <Shadow Brush="DarkSalmon" Offset="3, 2"
+                                                                        Radius="2" Opacity="0.8"/>
+                                                            </Frame.Shadow>
+                                                            <Image Source="{Binding Image}"/>
+                                                        </Frame>
+                                                    </DataTemplate>
+                                                </BindableLayout.ItemTemplate>
+                                            </HorizontalStackLayout>
+                                        </ScrollView>
+                                        <ImageButton Source="{Binding ImageSource}"
+                                                     BackgroundColor="AliceBlue"
+                                                     VerticalOptions="FillAndExpand"
+                                                     Grid.Row="1"
+                                                     Clicked="ImageButton_Clicked"/>
+                                        <Label Text="{Binding Text}"
+                                               Grid.Row="2"
+                                               Style="{StaticResource HeaderBig}"
+                                               FontSize="Medium"
+                                               HorizontalTextAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Grid>
+
+        <local1:ButtonsFooter Grid.Row="2" 
+                  OnRestartButtonClicked="AllerPageNbChoi"
+                  OnQuitButtonClicked="RevnirPageDaccueil"/>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UndercoverGame.LesViews.ViewFrames.FrameLanguage">
+
+    <Frame CornerRadius="10" Grid.Column="0" Grid.Row="1" Style="{StaticResource SquareSettings}" >
+        <VerticalStackLayout Spacing="20">
+            <Label 
+            Text="Language" 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center" 
+            FontSize="Medium"/>
+
+            <Picker MaximumHeightRequest="100">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Français</x:String>
+                        <x:String>Anglais</x:String>
+                        <x:String>ქართული</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </VerticalStackLayout>
+    </Frame>
+</ContentView>

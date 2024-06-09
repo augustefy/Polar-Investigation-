@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="UndercoverGame.PopUpWord"
+             Color="Transparent">
+    
+    <Border BackgroundColor="{AppThemeBinding Light= {StaticResource PalePink}, Dark={StaticResource Purple4}}" 
+            StrokeThickness="0" 
+            StrokeShape="RoundRectangle 40,40,40,40"
+            WidthRequest="400"
+            HeightRequest="300">
+        
+        <VerticalStackLayout VerticalOptions="Center" 
+                             HorizontalOptions="Center" 
+                             Spacing="20">
+        
+            <Label HorizontalOptions="Center" 
+                   Text="{Binding Joueur.Joueur.Name}" 
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light={StaticResource Purple8}, Dark={StaticResource PaperWhite}}"/>
+
+                <Border Stroke="{AppThemeBinding Light={StaticResource DarkerPink}, Dark={StaticResource Purple2}}" >
+                    <Label HorizontalOptions="Center" 
+                       Text="{Binding Mot}" 
+                       FontSize="Large" 
+                       FontAttributes="Bold" 
+                       TextColor="{AppThemeBinding Light={StaticResource Purple8}, Dark={StaticResource PaperWhite}}"/>
+                </Border>
+                <Button Style="{StaticResource GradientButtonFooter}" Text="Done" Clicked="Button_Clicked"/>
+        </VerticalStackLayout>
+    </Border>
+</toolkit:Popup>

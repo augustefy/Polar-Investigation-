@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local1="clr-namespace:UndercoverGame.LesViews.ViewHeaders"
+             xmlns:local2="clr-namespace:UndercoverGame.LesViews.ViewFooters"
+             x:Class="UndercoverGame.LesPages.PageAccueil"
+             Style="{StaticResource FondPage}"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="*,4*,*" ColumnDefinitions="7*, *">
+        <!--xmlns:local3="clr-namespace:UndercoverGame.LesViews.ViewButtons"-->
+        <!--<local3:CogButton/>-->
+        <local1:HeaderAccueil Grid.Column="1"/>
+        <Image Source="undercoverlogo.png" 
+               Grid.Row="0" 
+               Grid.RowSpan="2" 
+               Grid.Column="0" 
+               Grid.ColumnSpan="2"/>
+        <local2:FooterAccueilR Grid.Row="2" 
+                              Grid.Column="0" 
+                              Grid.ColumnSpan="2"
+                              OnStartButtonClicked="AllerProchainePage"
+                               OnLoadButtonClicked="RechargerPartie"
+                              
+                              />
+       
+    </Grid>
+</ContentPage>

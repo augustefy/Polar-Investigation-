@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:local1="clr-namespace:UndercoverGame"
+             xmlns:local2="clr-namespace:UndercoverGame.LesPages"
+             xmlns:local3="clr-namespace:UndercoverGame.LesViews.ViewHeaders"
+             x:Class="UndercoverGame.LesPages.CardPick"
+             NavigationPage.HasNavigationBar="False"
+             Style="{StaticResource FondPage}"
+             x:Name="root"
+             Title="">
+
+
+    <Grid RowDefinitions="*,4*,*">
+
+        <local3:HeaderSpeaking Grid.Row="0" Margin="0" NJoueur="{Binding Qui}" Titre="{Binding Titret}"/>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*,4*,*">
+            <Grid Grid.Column="1">
+                <CollectionView ItemsSource="{Binding r.Plateau.Board}" ItemsLayout="VerticalGrid, 3">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HeightRequest="400" MaximumWidthRequest="325">
+                                <Border Stroke="{StaticResource LightPink}" StrokeThickness="5"
+                                             Margin="0, 4" Padding="8,4"
+                                             Background="{AppThemeBinding Light={StaticResource PalePink}, Dark={StaticResource Purple3}}">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="30, 30, 30, 30"/>
+                                    </Border.StrokeShape>
+                                    <Grid RowDefinitions="5*,*">
+                                        <ImageButton Source="{Binding ImageSource}"
+                                                     BackgroundColor="Transparent"
+                                                     VerticalOptions="FillAndExpand"
+                                                     Grid.Row="0"
+                                                     Clicked="ImageButton_Clicked" />
+                                        <Label Text="{Binding Text}"
+                                               Grid.Row="1"
+                                               Style="{StaticResource HeaderBig}"
+                                               FontSize="Medium"
+                                               HorizontalTextAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Grid>
+
+
+        <local1:ButtonsFooter Grid.Row="2" 
+                              OnRestartButtonClicked="AllerPageNbChoi"
+                              OnQuitButtonClicked="RevnirPageDaccueil"/>
+    </Grid>
+</ContentPage>
